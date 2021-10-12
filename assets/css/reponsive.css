@@ -1,0 +1,29 @@
+/* Tablet & mobile */
+@media (max-width: 63.9375em) {
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+}
+
+@media (min-width: 62em) {
+  .nav > li > .sub-menu.mgt-menu-fullwidth {
+    width: calc(970px - 30px);
+  }
+}
+
+@media (max-width: 75em) {
+  .nav > li > a {
+    padding: 13px 10px;
+  }
+}
+
+@media (min-width: 75em) {
+  .nav > li > .sub-menu.mgt-menu-fullwidth {
+    width: calc(1170px - 30px);
+  }
+}

@@ -1,0 +1,13 @@
+.fade-up {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.fade-up.animate {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 1;
+}
