@@ -36,18 +36,19 @@ header .search-toggle-wrapper .header-right-search-form,
 .woocommerce a.button,
 .btn,
 .sidebar .widget.widget-text .textwidget,
-.social-icons-wrapper.social-icons-with-bg a {
+.social-icons-wrapper.social-icons-with-bg a,
+.main-menu-mobile-toggle i {
   border-radius: 5px;
 }
 
 .nav .sub-menu li.menu-item > a,
-.nav > li > .sub-menu.sidebar-inside .widget-title,
 .sub-menu .post-title a {
   color: var(--color-mainmenu-submenu-link);
 }
 
 header .header-right-search-form,
-.post .post-categories a {
+.post .post-categories a,
+.main-menu-mobile-toggle i {
   border: 1px solid var(--color-border-grey);
 }
 
@@ -76,6 +77,7 @@ header .header-right-search-form,
   font-size: 1.4rem;
 }
 
+.navbar .nav > li,
 .post-image-wrapper .post-image::after,
 .post.overlay-post .post-details-inner,
 .scroll-to-top {
@@ -358,6 +360,19 @@ header .header-left {
   flex-shrink: 0;
 }
 
+.main-menu-mobile-toggle {
+  font-size: 1.8rem;
+  color: var(--color-black);
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.main-menu-mobile-toggle i {
+  padding: 8px;
+  text-align: center;
+}
+
 header .logo {
   display: inline-block;
 }
@@ -450,12 +465,12 @@ header .header-right-search-form {
 }
 
 header .search-form-checkbox:checked ~ .header-right-search-form {
-  width: var(--width-search-form-input);
+  width: var(--width-search-form-input-large);
   opacity: 1;
 }
 
 header .header-right .header-right-search-form .search-form-input {
-  width: var(--width-search-form-input);
+  width: var(--width-search-form-input-large);
   height: 44.5px;
   opacity: 1;
   text-align: center;
@@ -474,8 +489,17 @@ header .header-right .header-right-search-form .search-form-input {
   );
 }
 
-.navbar-inner .grid .row {
+.main-menu .navbar-center-wrapper {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   justify-content: center;
+}
+
+.navbar .navbar-inner .grid {
+  padding: 0;
 }
 
 .nav > li {
@@ -519,6 +543,10 @@ header .header-right .header-right-search-form .search-form-input {
   font-size: 1rem;
 }
 
+.nav > li.menu-item-has-children > a > i.chevron-right-icon {
+  display: none;
+}
+
 .nav > li sup {
   text-transform: uppercase;
   display: inline-block;
@@ -530,6 +558,7 @@ header .header-right .header-right-search-form .search-form-input {
   font-weight: normal;
   position: absolute;
   top: auto;
+  color: #fff;
 }
 
 .nav > li > a > sup {
@@ -552,21 +581,14 @@ sup.tag-blue {
 }
 
 .nav .sub-menu {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
   position: absolute;
   text-align: left;
   z-index: 10000;
-  transition: margin 0.2s ease-in, opacity 0.2s ease-in, transform 0.2s ease-in,
-    visibility 0.2s ease-in;
-  -webkit-transition: margin 0.2s ease-in, opacity 0.2s ease-in,
-    transform 0.2s ease-in, visibility 0.2s ease-in;
   padding: var(--padding-vertical-submenu) 0;
   background: var(--color-mainmenu-submenu-bg);
   border: 1px solid var(--color-mainmenu-submenu-bg);
   box-shadow: var(--box-shadow);
-  animation: subMenuFadeIn 0.45s ease;
+  /* animation: subMenuFadeIn 0.45s ease; */
 }
 
 @keyframes subMenuFadeIn {
@@ -590,11 +612,10 @@ sup.tag-blue {
   margin-top: 10px;
 }
 
-.nav li:hover > .sub-menu {
-  display: block;
+/* .nav li:hover > .sub-menu {
   opacity: 1;
   visibility: visible;
-}
+} */
 
 .nav .sub-menu > li:hover > .sub-menu {
   margin-top: -16px;
@@ -765,10 +786,6 @@ sup.tag-blue {
 .post-image-wrapper:hover .post-image::after {
   bottom: 0 !important;
   right: 0 !important;
-}
-
-.sub-menu .post-image-wrapper:hover .post-image::after {
-  border-bottom-color: var(--color-mainmenu-submenu-bg);
 }
 
 .sidebar
@@ -973,6 +990,7 @@ sup.tag-blue {
 
 .post .post-other-information {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -1210,6 +1228,7 @@ sup.tag-blue {
 }
 
 .sidebar .widget-title {
+  color: var(--color-black);
   display: block;
   text-align: left;
   font-size: 2.2rem;
@@ -1332,14 +1351,6 @@ footer.footer-black {
   flex-shrink: 0;
 }
 
-.sidebar.footer-sidebar > ul > li:not(:first-child) {
-  padding-left: 0;
-}
-
-.sidebar.footer-sidebar > ul > li:not(:first-child):not(:last-child) {
-  padding-right: 10px;
-}
-
 .footer-sidebar-wrapper.footer-black .sidebar.footer-sidebar a:not(.btn) {
   color: #fff;
 }
@@ -1421,4 +1432,8 @@ footer .footer-social .social-icons-wrapper a {
 .btn.scroll-to-top i {
   line-height: 4rem;
   font-size: 1.4rem;
+}
+
+.sidebar.footer-sidebar .widget.widget-text .textwidget .btn {
+  margin-top: 20px;
 }

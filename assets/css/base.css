@@ -29,6 +29,7 @@
   --margin-themeblock-wrapper-end: 20px;
   --margin-themeblock-wrapper: 60px;
   --margin-overlaypost-regular: 50px;
+  --margin-overlaypost-mobile: 30px;
   --margin-carousel-block-wrapper-post: calc(
     var(--padding-col-large-device) * 2
   );
@@ -38,7 +39,8 @@
   --size-image-folded-corner-small: 40px;
   --size-icon-social: 44px;
 
-  --width-search-form-input: 230px;
+  --width-search-form-input-large: 230px;
+  --width-search-form-input-medium: 180px;
   --padding-vertical-submenu: 15px;
   --line-height-submenu-link: 1.2px;
 
@@ -63,6 +65,10 @@ body {
   background: var(--color-body-bg);
   color: var(--color-body-text);
   line-height: 1.75;
+}
+
+body.stop-transitions * {
+  transition: none !important;
 }
 
 ul,
@@ -113,6 +119,26 @@ h2 {
   content: '';
   clear: both;
   display: table;
+}
+
+[placeholder] {
+  text-overflow: ellipsis;
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  text-overflow: ellipsis;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-overflow: ellipsis;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  text-overflow: ellipsis;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-overflow: ellipsis;
 }
 
 input {

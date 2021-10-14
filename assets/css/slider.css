@@ -14,15 +14,10 @@
 
 .slider .slider-inner .slider-item {
   float: left;
+  width: 20%; /* 100% / 5 pictures = 20% */
 }
 
-/* Carousel large post */
-.large-post-slider-block-wrapper .slider .slider-inner {
-  width: 500%; /* 5 pictures = 500% */
-  animation: 20s slider-five-items infinite;
-}
-
-@keyframes slider-five-items {
+@keyframes sliderFadeIn {
   /* you must divide 100% fot the amount of images you have */
   0% {
     left: 0;
@@ -55,182 +50,107 @@
   }
 }
 
-.large-post-slider-block-wrapper .slider .slider-inner .slider-item {
-  width: 20%; /* 100% / 5 pictures = 20% */
-}
-
-/* Carousel euro news */
-.carousel-block-wrapper.carousel-euro-news .slider .slider-inner {
-  width: calc(
-    600% + var(--margin-carousel-block-wrapper-post) * 5
-  ); /* 6 items */
-  animation: 40s slider-six-items infinite;
-}
-
-@keyframes slider-six-items {
+@-o-keyframes sliderFadeIn {
+  /* you must divide 100% fot the amount of images you have */
   0% {
     left: 0;
   }
-  16.66667% {
-    left: 0;
-  }
+  /* these intermediate steps (20%, 45%, 70%, ... will make the transition speed faster */
   20% {
-    left: calc(-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6);
-  }
-  36.66667% {
-    left: calc(-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6);
-  }
-  40% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 2
-    );
-  }
-  56.66667% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 2
-    );
-  }
-  60% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 3
-    );
-  }
-  76.66667% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 3
-    );
-  }
-  80% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 4
-    );
-  }
-  96.66667% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 4
-    );
-  }
-  100% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 5) / 6) * 5
-    );
-  }
-}
-
-.carousel-block-wrapper.carousel-euro-news .slider .slider-inner .slider-item {
-  width: calc(100% / 6 - var(--margin-carousel-block-wrapper-post));
-}
-
-.carousel-block-wrapper .slider .slider-inner .slider-item:not(:last-child) {
-  margin-right: var(--margin-carousel-block-wrapper-post);
-}
-
-/* Carousel trending news */
-.carousel-block-wrapper.carousel-trending-news .slider .slider-inner {
-  width: calc(
-    1000% + var(--margin-carousel-block-wrapper-post) * 9
-  ); /* 10 items */
-  animation: 60s slider-ten-items infinite;
-}
-
-@keyframes slider-ten-items {
-  0% {
     left: 0;
   }
-  7% {
-    left: 0;
+  /* because total width: 500% (5 x 100% for 5 images) => use 20% for each image */
+  25% {
+    left: -100%;
   }
-  10% {
-    left: calc(-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10);
-  }
-  17% {
-    left: calc(-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10);
-  }
-  20% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 2
-    );
-  }
-  27% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 2
-    );
-  }
-  30% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 3
-    );
-  }
-  37% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 3
-    );
-  }
-  40% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 4
-    );
-  }
-  47% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 4
-    );
+  45% {
+    left: -100%;
   }
   50% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 5
-    );
-  }
-  57% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 5
-    );
-  }
-  60% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 6
-    );
-  }
-  67% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 6
-    );
+    left: -200%;
   }
   70% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 7
-    );
+    left: -200%;
   }
-  77% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 7
-    );
+  75% {
+    left: -300%;
   }
-  80% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 8
-    );
-  }
-  87% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 8
-    );
-  }
-  90% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 9
-    );
+  95% {
+    left: -300%;
   }
   100% {
-    left: calc(
-      (-100% - (var(--margin-carousel-block-wrapper-post) * 9) / 10) * 9
-    );
+    left: -400%;
   }
 }
 
-.carousel-block-wrapper.carousel-trending-news
-  .slider
-  .slider-inner
-  .slider-item {
-  width: calc(100% / 10 - var(--margin-carousel-block-wrapper-post));
+@-moz-keyframes sliderFadeIn {
+  /* you must divide 100% fot the amount of images you have */
+  0% {
+    left: 0;
+  }
+  /* these intermediate steps (20%, 45%, 70%, ... will make the transition speed faster */
+  20% {
+    left: 0;
+  }
+  /* because total width: 500% (5 x 100% for 5 images) => use 20% for each image */
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+@-webkit-keyframes sliderFadeIn {
+  /* you must divide 100% fot the amount of images you have */
+  0% {
+    left: 0;
+  }
+  /* these intermediate steps (20%, 45%, 70%, ... will make the transition speed faster */
+  20% {
+    left: 0;
+  }
+  /* because total width: 500% (5 x 100% for 5 images) => use 20% for each image */
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+.slider .slider-inner {
+  width: 500%; /* 5 pictures = 500% */
+  -webkit-animation: 20s sliderFadeIn infinite;
+  animation: 20s sliderFadeIn infinite;
 }
